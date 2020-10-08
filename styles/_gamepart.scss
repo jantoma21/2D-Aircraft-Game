@@ -1,0 +1,56 @@
+#gameSection {
+    height: 100vh;
+    position: relative;
+    transition: all 3s linear;
+}
+
+.indicators-scores {
+    display: flex;
+    margin-top: 5vh;
+}
+
+canvas {
+    display: block;
+}
+
+.indicators {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    margin-left: 10px;
+    margin-top: 20px;
+
+    svg {
+        margin: 0 10px;
+    }
+}
+
+.lights {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-left: 10px;
+    justify-content: space-around;
+
+    .circles {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+
+        .circle {
+            transition: all 0.5s linear;
+        }
+
+    }
+}
+
+
+.imlec {
+    transition: transform 1s linear;
+    transform-origin: center;
+}
+
+#app {
+    transition: all 2s ease;
+}

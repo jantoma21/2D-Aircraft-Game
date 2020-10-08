@@ -1,0 +1,257 @@
+/*Global Degiskenler */
+$header1: 4.5rem;
+$header2: 3.0rem;
+$header3: 2.0rem;
+$header4: 2.5rem;
+$text: 2.7rem;
+
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+/* Ana Sayfa */
+@import "global";
+
+#plane {
+    position: absolute;
+    animation: flip 3s linear, move 8s linear;
+    top: 5vh;
+    height: 5vh;
+    width: 7.5vw;
+    transition: all 1.5s ease;
+}
+
+.f_page {
+    position: relative;
+    @include flex(center, center, column);
+    padding: 15vh 20vw;
+    min-height: 100vh;
+    transition: all 2s ease;
+
+}
+
+/* Ana Sayfa Bitti */
+
+/* Bilgilendirme Sayfası */
+
+@import "information";
+
+/* Bilgilendirme Sayfası Bitti */
+
+/* Oyun Bolumu */
+
+@import "gamePart";
+
+/* Oyun Bolumu Bitti */
+
+/* Motor Calıştırma*/
+
+@import "start";
+
+/* Motor Calıştırma Bitti*/
+
+/* Keyframes Giris */
+
+@keyframes move {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: 100vw;
+    }
+}
+
+@keyframes flip {
+    from {
+        transform: rotateX(0);
+    }
+
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+/* Keyframes Bitti */
+
+/* Responsive Tasarım */
+@media screen and (max-width: 1800px) {
+    html {
+        font-size: 65%;
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    html {
+        font-size: 55%;
+    }
+
+    svg {
+        height: 175px;
+        width: 175px;
+    }
+
+    .element {
+        margin-bottom: 3vh;
+    }
+
+}
+
+@media screen and (max-width: 1536px) {
+    html {
+        font-size: 50%;
+    }
+
+    svg {
+        height: 175px;
+        width: 175px;
+    }
+
+    .element {
+        margin-bottom: 3vh;
+    }
+
+}
+
+@media screen and (max-width: 1480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .information {
+        margin-top: 2vh;
+    }
+
+    .indicators-scores {
+        margin-top: 3vh;
+
+        h3 {
+            margin-bottom: 3vh;
+        }
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    html {
+        font-size: 45%;
+    }
+
+    .element {
+        margin-bottom: 3vh;
+    }
+
+    .information {
+        margin-top: 1vh;
+        padding: 0;
+    }
+
+    .circle {
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+    svg {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    html {
+        font-size: 40%;
+    }
+
+    .indicators {
+        margin-top: 0;
+    }
+
+    .element {
+        margin-bottom: 2vh;
+    }
+
+    .information {
+        margin-top: 1vh;
+        padding: 0;
+    }
+
+    .circle {
+        min-width: 45px;
+        min-height: 45px;
+    }
+
+    svg {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media screen and (height: 913px) {
+    html {
+        font-size: 55%;
+    }
+
+    .indicators {
+        margin-top: 0;
+    }
+
+    .element {
+        margin-bottom: 7vh;
+    }
+
+    svg {
+        width: 160px;
+        height: 160px;
+    }
+
+    .information {
+        margin-top: 1vh;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 40%;
+    }
+
+    .indicators {
+        margin-top: 0;
+    }
+
+    .elements {
+        padding: 5px;
+        ;
+    }
+
+    .information {
+        margin-top: 1vh;
+        padding: 0;
+    }
+
+    .circle {
+        min-width: 45px;
+        min-height: 45px;
+    }
+
+    svg {
+        width: 130px;
+        height: 130px;
+    }
+
+    .element {
+        margin-bottom: 1vh;
+    }
+
+    .indicators-scores {
+        margin-top: 1vh;
+    }
+}

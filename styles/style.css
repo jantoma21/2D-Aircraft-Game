@@ -1,0 +1,558 @@
+@charset "UTF-8";
+/*Global Degiskenler */
+/* Ana Sayfa */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}
+
+body p {
+  font-size: 2rem;
+  font-family: 'Alate', sans-serif;
+  margin-top: 10px;
+}
+
+body h3 {
+  font-size: 4.5rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 5vh;
+}
+
+body h4 {
+  opacity: 0.5;
+  font-size: 3rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 3vh;
+}
+
+body li {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  margin: 2vh;
+}
+
+body ul {
+  margin-bottom: 4vh;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.opacity_off {
+  opacity: 1;
+}
+
+button {
+  padding: 2vh 4vw;
+  text-decoration: none;
+  color: black;
+  border: solid 1px black;
+  background-color: none;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  color: white;
+  background-color: black;
+}
+
+#plane {
+  position: absolute;
+  -webkit-animation: flip 3s linear, move 8s linear;
+          animation: flip 3s linear, move 8s linear;
+  top: 5vh;
+  height: 5vh;
+  width: 7.5vw;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+}
+
+.f_page {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15vh 20vw;
+  min-height: 100vh;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+/* Ana Sayfa Bitti */
+/* Bilgilendirme Sayfası */
+.ok {
+  position: absolute;
+  right: 5px;
+  border: 1px solid black;
+}
+
+.information {
+  position: relative;
+  height: 100vh;
+  padding: 2rem;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.information .elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.information .elements .circles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.element {
+  text-align: center;
+  padding: 0 1rem;
+  width: 30%;
+  margin-bottom: 10vh;
+}
+
+.circle {
+  border-radius: 50vh;
+  border: 1px solid black;
+  min-width: 60px;
+  min-height: 60px;
+}
+
+/* Bilgilendirme Sayfası Bitti */
+/* Oyun Bolumu */
+#gameSection {
+  height: 100vh;
+  position: relative;
+  -webkit-transition: all 3s linear;
+  transition: all 3s linear;
+}
+
+.indicators-scores {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5vh;
+}
+
+canvas {
+  display: block;
+}
+
+.indicators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.indicators svg {
+  margin: 0 10px;
+}
+
+.lights {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.lights .circles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.lights .circles .circle {
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.imlec {
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+#app {
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+/* Oyun Bolumu Bitti */
+/* Motor Calıştırma*/
+.start {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: -10vh;
+}
+
+.startDis {
+  height: 7vw;
+  width: 7vw;
+  border: solid black 1px;
+  border-radius: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2vh;
+}
+
+.startIc {
+  height: 5.6vw;
+  width: 5.6vw;
+  border: solid black 1px;
+  border-radius: 50%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.startEnIc {
+  height: 4.2vw;
+  width: 4.2vw;
+  border: solid black 1px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+h6 {
+  position: absolute;
+  color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.cubuk {
+  height: 5vh;
+  width: 20vw;
+  border: solid black 1px;
+  position: relative;
+  margin-bottom: 1vh;
+}
+
+.hedef {
+  position: absolute;
+  height: 5vh;
+  width: 2vw;
+  right: 5vw;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+}
+
+.oynak {
+  position: absolute;
+  width: 1vw;
+  height: 5vh;
+  left: 0;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: black;
+}
+
+/* Motor Calıştırma Bitti*/
+/* Keyframes Giris */
+@-webkit-keyframes move {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+@keyframes move {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@keyframes flip {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+/* Keyframes Bitti */
+/* Responsive Tasarım */
+@media screen and (max-width: 1800px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  html {
+    font-size: 55%;
+  }
+  svg {
+    height: 175px;
+    width: 175px;
+  }
+  .element {
+    margin-bottom: 3vh;
+  }
+}
+
+@media screen and (max-width: 1536px) {
+  html {
+    font-size: 50%;
+  }
+  svg {
+    height: 175px;
+    width: 175px;
+  }
+  .element {
+    margin-bottom: 3vh;
+  }
+}
+
+@media screen and (max-width: 1480px) {
+  html {
+    font-size: 50%;
+  }
+  .information {
+    margin-top: 2vh;
+  }
+  .indicators-scores {
+    margin-top: 3vh;
+  }
+  .indicators-scores h3 {
+    margin-bottom: 3vh;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 45%;
+  }
+  .element {
+    margin-bottom: 3vh;
+  }
+  .information {
+    margin-top: 1vh;
+    padding: 0;
+  }
+  .circle {
+    min-width: 50px;
+    min-height: 50px;
+  }
+  svg {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 40%;
+  }
+  .indicators {
+    margin-top: 0;
+  }
+  .element {
+    margin-bottom: 2vh;
+  }
+  .information {
+    margin-top: 1vh;
+    padding: 0;
+  }
+  .circle {
+    min-width: 45px;
+    min-height: 45px;
+  }
+  svg {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media screen and (height: 913px) {
+  html {
+    font-size: 55%;
+  }
+  .indicators {
+    margin-top: 0;
+  }
+  .element {
+    margin-bottom: 7vh;
+  }
+  svg {
+    width: 160px;
+    height: 160px;
+  }
+  .information {
+    margin-top: 1vh;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 40%;
+  }
+  .indicators {
+    margin-top: 0;
+  }
+  .elements {
+    padding: 5px;
+  }
+  .information {
+    margin-top: 1vh;
+    padding: 0;
+  }
+  .circle {
+    min-width: 45px;
+    min-height: 45px;
+  }
+  svg {
+    width: 130px;
+    height: 130px;
+  }
+  .element {
+    margin-bottom: 1vh;
+  }
+  .indicators-scores {
+    margin-top: 1vh;
+  }
+}
+/*# sourceMappingURL=style.css.map */
