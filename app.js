@@ -116,14 +116,14 @@
         SmokeDrawFirstLevel() {
             ctx.beginPath();
             var smoke = new Image();
-            smoke.src = `./images/background/smoke.svg`;
+            smoke.src = `./images/background/smoke.jpg`;
             ctx.drawImage(smoke, this.x + this.w / 4, this.y - ucakYukseklik / 8, this.w / 2, this.h / 2)
             ctx.closePath();
         }
         SmokeDrawSecondLevel() {
             ctx.beginPath();
             var smoke2 = new Image();
-            smoke2.src = `./images/background/smoke2.svg`;
+            smoke2.src = `./images/background/smoke2.jpg`;
             ctx.drawImage(smoke2, this.x + this.w / 8, this.y + 9 * ucakYukseklik / 10, this.w / 2, this.h / 2)
             ctx.closePath();
         }
@@ -275,12 +275,12 @@
             ctx.beginPath();
             if (this.type === 0) {
                 var treeImg = new Image();
-                treeImg.src = `./images/background/tree${this.type2}.svg`;
+                treeImg.src = `./images/background/tree${this.type2}.jpg`;
                 ctx.drawImage(treeImg, this.x, this.y, this.w, this.h);
 
             } else if (this.type === 1) {
                 var mountainImg = new Image();
-                mountainImg.src = `./images/background/mountain${this.type2}.svg`;
+                mountainImg.src = `./images/background/mountain${this.type2}.jpg`;
                 ctx.drawImage(mountainImg, this.x, this.y, this.w, this.h);
             } else {
                 var birdImg = new Image();
