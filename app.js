@@ -238,23 +238,31 @@
             gameSpeed = gameSpeed + 0.1;
             speed = Math.floor(gameSpeed / 3);
             speedValue.innerText = `${speed}`;
-            indicators();
-            lamps();
-            mode();
+            // indicators();
+            // lamps();
+            // mode();
         }
         Left() {
-            gameSpeed = gameSpeed - 0.01;
+            gameSpeed = gameSpeed - 0.1;
             let lowSpeed = setInterval(() => {
-                if (speed > 15)
+                if (speed > 15 || speed === 0)
                     clearInterval(lowSpeed);
-                else
-                    this.y = this.y + 0.1;
+                else {
+                    if (this.y < canvas.height - ucakYukseklik)
+                        this.y = this.y + 0.1;
+                    else {
+                        gameOver();
+                        this.x = 0;
+                        this.y = canvas.height - ucakYukseklik;
+                    }
+                }
+
             }, 50);
             speed = Math.floor(gameSpeed / 3);
             speedValue.innerText = `${speed}`;
-            indicators();
-            lamps();
-            mode();
+            //     indicators();
+            //     lamps();
+            //     mode();
         }
     }
     class Obstacle {
@@ -334,13 +342,13 @@
     let spawnTimer = 160;
 
     function Update() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         if (gameStart === true) {
             spawnTimer -= 1;
             if (spawnTimer <= 0) {
                 SpawnObstacle();
                 spawnTimer = 140;
             }
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < obstacles.length; ++i) {
                 let o = obstacles[i];
                 if (obstacles[i] != 1) {
@@ -370,6 +378,9 @@
         requestAnimationFrame(Update);
     }
     /* Uçağın Ana Fonksiyonları Bitti*/
+    setInterval(mode, 2000);
+    setInterval(lamps, 2000);
+    setInterval(indicators, 300);
 
     /* Puan - Mod */
 
