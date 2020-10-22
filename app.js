@@ -72,6 +72,7 @@
     /* Giris ve Bilgilendirme Sayfası Bitis*/
     var shake = false;
     /* Uçağın Ana Fonksiyonları */
+
     document.addEventListener('keydown', (e) => {
         if (startCondition === true)
             keys[e.code] = true;
@@ -242,7 +243,7 @@
             mode();
         }
         Left() {
-            gameSpeed = gameSpeed - 0.1;
+            gameSpeed = gameSpeed - 0.01;
             let lowSpeed = setInterval(() => {
                 if (speed > 15)
                     clearInterval(lowSpeed);
@@ -334,19 +335,19 @@
 
     function Update() {
         if (gameStart === true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
             spawnTimer -= 1;
             if (spawnTimer <= 0) {
                 SpawnObstacle();
                 spawnTimer = 140;
             }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < obstacles.length; ++i) {
                 let o = obstacles[i];
-
                 if (obstacles[i] != 1) {
                     o.Update();
                     if (o.x + o.w < 0) {
                         obstacles[i] = 1;
+                        // obstacles.splice(i, 1);
                     }
                 }
                 if (player.x < o.x + o.w && player.x + player.w > o.x && player.y < o.y + o.h && player.y + player.h > o.y) {
