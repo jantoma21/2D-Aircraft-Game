@@ -133,15 +133,11 @@
             ctx.closePath();
         }
         ShakeFirstLevel() {
-            var randomShake = Math.random() * 1200;
-            if (randomShake < 1)
-                shake = false;
-            if (shake === false && sayac === 0) {
+            if (shake === false) {
                 var up = false;
                 shake = true;
                 var planeShake = setInterval(() => {
                     if (gameStart === true) {
-                        sayac += 1;
                         if (up === false) {
                             if (this.y < canvas.height - ucakYukseklik) {
                                 if (speed < 80)
@@ -157,10 +153,9 @@
                                 this.y = this.y - 3;
                             up = false;
                         }
-                        if (sayac === 100 || gameStart === false || speed >= 90 || speed < 70) {
-                            if (speed >= 90)
+                        if (gameStart === false || speed >= 90 || speed < 70) {
+                            if (speed < 70)
                                 shake = false;
-                            sayac = 0;
                             clearInterval(planeShake);
                         }
                     }
@@ -168,15 +163,11 @@
             }
         }
         ShakeSecondLevel() {
-            var randomShake = Math.random() * 300;
-            if (randomShake < 1)
-                shake = false;
-            if (shake === false && sayac === 0) {
+            if (shake === true) {
                 var up = false;
-                shake = true;
+                shake = false;
                 var planeShake = setInterval(() => {
                         if (gameStart === true) {
-                            sayac += 1;
                             if (up === false) {
                                 if (this.y < canvas.height - ucakYukseklik) {
                                     if (speed < 100)
@@ -196,8 +187,7 @@
                                     this.y = this.y - 9;
                                 up = false;
                             }
-                            if (sayac === 100 || gameStart === false || speed < 90) {
-                                sayac = 0;
+                            if (gameStart === false || speed < 90) {
                                 clearInterval(planeShake);
                             }
                         }
@@ -384,7 +374,7 @@
     /* Uçağın Ana Fonksiyonları Bitti*/
     setInterval(mode, 2000);
     setInterval(lamps, 2000);
-    setInterval(indicators, 300);
+    setInterval(indicators, 50);
 
     /* Puan - Mod */
 
