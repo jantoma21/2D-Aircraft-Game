@@ -51,6 +51,7 @@
         plane.offsetHeight;
         plane.style.animation = null;
     }
+    var start = false;
     btnInfo.addEventListener('click', () => {
         plane.classList.add('opacity');
         f_page.style.transform = `translateY(-100%)`;
@@ -63,7 +64,10 @@
                 info.addEventListener('transitionend', () => {
                     f_page.remove();
                     info.remove();
-                    Start();
+                    if (start === false) {
+                        Start();
+                        start = true;
+                    }
                     gameSec.classList.add('opacity_off');
                 })
             })
@@ -117,14 +121,14 @@
         SmokeDrawFirstLevel() {
             ctx.beginPath();
             var smoke = new Image();
-            smoke.src = `./images/background/smoke.jpg`;
+            smoke.src = `./images/background/smoke.png`;
             ctx.drawImage(smoke, this.x + this.w / 4, this.y - ucakYukseklik / 8, this.w / 2, this.h / 2)
             ctx.closePath();
         }
         SmokeDrawSecondLevel() {
             ctx.beginPath();
             var smoke2 = new Image();
-            smoke2.src = `./images/background/smoke2.jpg`;
+            smoke2.src = `./images/background/smoke2.png`;
             ctx.drawImage(smoke2, this.x + this.w / 8, this.y + 9 * ucakYukseklik / 10, this.w / 2, this.h / 2)
             ctx.closePath();
         }
@@ -235,15 +239,15 @@
             }
         }
         Right() {
-            gameSpeed = gameSpeed + 0.1;
-            speed = Math.floor(gameSpeed / 3);
+            gameSpeed = gameSpeed + 0.01;
+            speed = Math.floor(gameSpeed / 0.3);
             speedValue.innerText = `${speed}`;
             // indicators();
             // lamps();
             // mode();
         }
         Left() {
-            gameSpeed = gameSpeed - 0.1;
+            gameSpeed = gameSpeed - 0.01;
             let lowSpeed = setInterval(() => {
                 if (speed > 15 || speed === 0)
                     clearInterval(lowSpeed);
@@ -258,7 +262,7 @@
                 }
 
             }, 50);
-            speed = Math.floor(gameSpeed / 3);
+            speed = Math.floor(gameSpeed / 0.3);
             speedValue.innerText = `${speed}`;
             //     indicators();
             //     lamps();
@@ -278,22 +282,22 @@
         Update() {
             this.x += this.dx;
             this.Draw();
-            this.dx = -gameSpeed * 0.1;
+            this.dx = -gameSpeed * 1;
         }
         Draw() {
             ctx.beginPath();
             if (this.type === 0) {
                 var treeImg = new Image();
-                treeImg.src = `./images/background/tree${this.type2}.jpg`;
+                treeImg.src = `./images/background/tree${this.type2}.png`;
                 ctx.drawImage(treeImg, this.x, this.y, this.w, this.h);
 
             } else if (this.type === 1) {
                 var mountainImg = new Image();
-                mountainImg.src = `./images/background/mountain${this.type2}.jpg`;
+                mountainImg.src = `./images/background/mountain${this.type2}.png`;
                 ctx.drawImage(mountainImg, this.x, this.y, this.w, this.h);
             } else {
                 var birdImg = new Image();
-                birdImg.src = `./images/background/bird.jpg`;
+                birdImg.src = `./images/background/bird.png`;
                 ctx.drawImage(birdImg, this.x, this.y, this.w, this.h);
             }
             ctx.closePath();
