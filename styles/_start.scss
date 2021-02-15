@@ -10,7 +10,9 @@
     border: solid black 1px;
     border-radius: 50%;
     position: relative;
-    @include flex(center, center, column);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 2vh;
 }
 
@@ -26,18 +28,14 @@
 .startEnIc {
     height: 4.2vw;
     width: 4.2vw;
-    border: solid black 1px;
     position: absolute;
     border-radius: 50%;
     background-color: black;
     @include flex(center, center, column);
-}
 
-h6 {
-    position: absolute;
-    color: white;
-    transition: all 0.5s ease-in-out;
-    opacity: 0;
+    h6 {
+        margin: 0;
+    }
 }
 
 .cubuk {

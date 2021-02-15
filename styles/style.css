@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /*Global Degiskenler */
-/* Ana Sayfa */
 * {
   padding: 0;
   margin: 0;
@@ -47,6 +46,14 @@ body ul {
   margin-bottom: 4vh;
 }
 
+body h6 {
+  position: absolute;
+  color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
 .opacity {
   opacity: 0;
 }
@@ -74,6 +81,7 @@ button:hover {
   background-color: black;
 }
 
+/* Ana Sayfa */
 #plane {
   position: absolute;
   -webkit-animation: flip 3s linear, move 8s linear;
@@ -81,12 +89,9 @@ button:hover {
   top: 5vh;
   height: 5vh;
   width: 7.5vw;
-  -webkit-transition: all 1.5s ease;
-  transition: all 1.5s ease;
 }
 
-.f_page {
-  position: relative;
+.firstPage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,10 +105,8 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 15vh 20vw;
-  min-height: 100vh;
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease;
+  padding: 0 20vw;
+  height: 100vh;
 }
 
 /* Ana Sayfa Bitti */
@@ -118,8 +121,11 @@ button:hover {
   position: relative;
   height: 100vh;
   padding: 2rem;
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease;
+}
+
+.information #start {
+  text-align: center;
+  position: relative;
 }
 
 .information .elements {
@@ -158,6 +164,11 @@ button:hover {
 
 /* Bilgilendirme Sayfası Bitti */
 /* Oyun Bolumu */
+#game {
+  overflow: hidden;
+  max-height: 100vh;
+}
+
 #gameSection {
   height: 100vh;
   position: relative;
@@ -223,15 +234,15 @@ canvas {
 }
 
 .lights .circles .circle {
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
 }
 
 .imlec {
-  -webkit-transition: -webkit-transform 1s linear;
-  transition: -webkit-transform 1s linear;
-  transition: transform 1s linear;
-  transition: transform 1s linear, -webkit-transform 1s linear;
+  -webkit-transition: -webkit-transform .5s linear;
+  transition: -webkit-transform .5s linear;
+  transition: transform .5s linear;
+  transition: transform .5s linear, -webkit-transform .5s linear;
   -webkit-transform-origin: center;
           transform-origin: center;
 }
@@ -272,16 +283,12 @@ canvas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 2vh;
 }
 
@@ -309,7 +316,6 @@ canvas {
 .startEnIc {
   height: 4.2vw;
   width: 4.2vw;
-  border: solid black 1px;
   position: absolute;
   border-radius: 50%;
   background-color: black;
@@ -328,12 +334,8 @@ canvas {
           flex-direction: column;
 }
 
-h6 {
-  position: absolute;
-  color: white;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  opacity: 0;
+.startEnIc h6 {
+  margin: 0;
 }
 
 .cubuk {
@@ -369,18 +371,18 @@ h6 {
 /* Keyframes Giris */
 @-webkit-keyframes move {
   0% {
-    left: 0px;
+    margin-left: 0;
   }
   100% {
-    left: 100vw;
+    margin-left: 100%;
   }
 }
 @keyframes move {
   0% {
-    left: 0px;
+    margin-left: 0;
   }
   100% {
-    left: 100vw;
+    margin-left: 100%;
   }
 }
 

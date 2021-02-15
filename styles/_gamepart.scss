@@ -1,56 +1,58 @@
+#game {
+  overflow: hidden;
+  max-height: 100vh;
+}
 #gameSection {
-    height: 100vh;
-    position: relative;
-    transition: all 3s linear;
+  height: 100vh;
+  position: relative;
+  transition: all 3s linear;
 }
 
 .indicators-scores {
-    display: flex;
-    margin-top: 5vh;
+  display: flex;
+  margin-top: 5vh;
 }
 
 canvas {
-    display: block;
+  display: block;
 }
 
 .indicators {
-    display: flex;
-    justify-content: space-around;
-    flex: 1;
-    margin-left: 10px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  margin-left: 10px;
+  margin-top: 20px;
 
-    svg {
-        margin: 0 10px;
-    }
+  svg {
+    margin: 0 10px;
+  }
 }
 
 .lights {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  margin-left: 10px;
+  justify-content: space-around;
+
+  .circles {
     display: flex;
-    flex: 1;
+    flex-direction: column;
     align-items: center;
-    margin-left: 10px;
-    justify-content: space-around;
+    margin: 10px;
 
-    .circles {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 10px;
-
-        .circle {
-            transition: all 0.5s linear;
-        }
-
+    .circle {
+      transition: all .1s linear;
     }
+  }
 }
 
-
 .imlec {
-    transition: transform 1s linear;
-    transform-origin: center;
+  transition: transform .5s linear;
+  transform-origin: center;
 }
 
 #app {
-    transition: all 2s ease;
+  transition: all 2s ease;
 }

@@ -12,8 +12,9 @@ $text: 2.7rem;
     flex-direction: $direction;
 }
 
-/* Ana Sayfa */
 @import "global";
+
+/* Ana Sayfa */
 
 #plane {
     position: absolute;
@@ -21,16 +22,12 @@ $text: 2.7rem;
     top: 5vh;
     height: 5vh;
     width: 7.5vw;
-    transition: all 1.5s ease;
 }
 
-.f_page {
-    position: relative;
+.firstPage {
     @include flex(center, center, column);
-    padding: 15vh 20vw;
-    min-height: 100vh;
-    transition: all 2s ease;
-
+    padding: 0 20vw;
+    height: 100vh;
 }
 
 /* Ana Sayfa Bitti */
@@ -57,11 +54,11 @@ $text: 2.7rem;
 
 @keyframes move {
     0% {
-        left: 0px;
+        margin-left: 0;
     }
 
     100% {
-        left: 100vw;
+        margin-left: 100%;
     }
 }
 
