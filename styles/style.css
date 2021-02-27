@@ -18,7 +18,6 @@ body {
 
 body p {
   font-size: 2rem;
-  font-family: 'Alate', sans-serif;
   margin-top: 10px;
 }
 
@@ -123,6 +122,12 @@ button:hover {
   padding: 2rem;
 }
 
+.information .info-title {
+  opacity: 1;
+  font-size: 4rem;
+  cursor: auto;
+}
+
 .information #start {
   text-align: center;
   position: relative;
@@ -148,11 +153,20 @@ button:hover {
   margin-bottom: 5px;
 }
 
+.information .elements .circles span {
+  font-size: 2rem;
+}
+
 .element {
   text-align: center;
   padding: 0 1rem;
   width: 30%;
   margin-bottom: 10vh;
+}
+
+.element .keyboard {
+  height: 200px;
+  width: 250px;
 }
 
 .circle {
@@ -198,6 +212,9 @@ canvas {
           flex: 1;
   margin-left: 10px;
   margin-top: 20px;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 .indicators svg {
@@ -239,10 +256,10 @@ canvas {
 }
 
 .imlec {
-  -webkit-transition: -webkit-transform .5s linear;
-  transition: -webkit-transform .5s linear;
-  transition: transform .5s linear;
-  transition: transform .5s linear, -webkit-transform .5s linear;
+  -webkit-transition: -webkit-transform .75s linear;
+  transition: -webkit-transform .75s linear;
+  transition: transform .75s linear;
+  transition: transform .75s linear, -webkit-transform .75s linear;
   -webkit-transform-origin: center;
           transform-origin: center;
 }

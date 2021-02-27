@@ -9,6 +9,12 @@
     height: 100vh;
     padding: 2rem;
 
+    .info-title {
+        opacity: 1;
+        font-size: 4rem;
+        cursor: auto;
+    }
+
     #start {
         text-align: center;
         position: relative;
@@ -23,6 +29,10 @@
             display: flex;
             align-items: center;
             margin-bottom: 5px;
+
+            span {
+                font-size: 2rem;
+            }
         }
     }
 }
@@ -32,6 +42,11 @@
     padding: 0 1rem;
     width: 30%;
     margin-bottom: 10vh;
+
+    .keyboard {
+        height: 200px;
+        width: 250px;
+    }
 }
 
 .circle {

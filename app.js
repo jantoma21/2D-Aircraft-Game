@@ -1,10 +1,10 @@
 const plane = document.querySelector("#plane");
 const btnInfo = document.querySelector("button");
 const f_page = document.querySelector(".firstPage");
-const imlec_oil = document.querySelectorAll("#imlec_oil");
-const imlec_rpm = document.querySelectorAll("#imlec_rpm");
-const imlec_throttle = document.querySelectorAll("#imlec_throttle");
-const imlec_ftit = document.querySelectorAll("#imlec_ftit");
+const imlec_oil = document.querySelector("#imlec_oil");
+const imlec_rpm = document.querySelector("#imlec_rpm");
+const imlec_throttle = document.querySelector("#imlec_throttle");
+const imlec_ftit = document.querySelector("#imlec_ftit");
 const lights = document.querySelectorAll(".circle");
 const speedValue = document.querySelector("#speed");
 const modeValue = document.querySelector("#mode");
@@ -28,21 +28,22 @@ var gameStart = false;
 var score = 0;
 var highScore = 0;
 var startCondition = false;
-let ucakTop = 0;
-let ucakUzunluk = 0;
-let ucakYukseklik = 0;
-let ucakX = 0;
-let agacUzunluk = 0;
-let agacYukseklik = 0;
-let dagYukseklik = 0;
-let dagUzunluk = 0;
-let kusYukseklik = 0;
-let kusUzunluk = 0;
+let ucakTop = 0,
+  ucakX = 0,
+  ucakUzunluk = 0,
+  ucakYukseklik = 0;
+let agacUzunluk = 0,
+  agacYukseklik = 0;
+let dagYukseklik = 0,
+  dagUzunluk = 0;
+let kusYukseklik = 0,
+  kusUzunluk = 0;
 var sayac = 0;
-var rotate_ftit = 0;
-var rotate_oil = 0;
-var rotate_rpm = 0;
+var rotate_ftit = 0,
+  rotate_oil = 0,
+  rotate_rpm = 0;
 var newSpeed = 21;
+
 /* Giris ve Bilgilendirme Sayfası*/
 
 /*Giris sayfası uçak animasyonu */
@@ -72,6 +73,7 @@ btnInfo.addEventListener("click", () => {
         info.remove();
         if (start === false) {
           Start();
+          circleBig();
           start = true;
         }
         gameSec.classList.add("opacity_off");
@@ -114,14 +116,14 @@ class Player {
     this.Draw();
   }
   Draw() {
-    ctx.beginPath();
+    // ctx.beginPath();
     var img = new Image();
     img.src = "./images/aircraft.png";
     ctx.drawImage(img, this.x, this.y, this.w, this.h);
-    ctx.closePath();
+    // ctx.closePath();
   }
   SmokeDrawFirstLevel() {
-    ctx.beginPath();
+    // ctx.beginPath();
     var smoke = new Image();
     smoke.src = `./images/background/smoke.png`;
     ctx.drawImage(
@@ -131,10 +133,10 @@ class Player {
       this.w / 2,
       this.h / 2
     );
-    ctx.closePath();
+    // ctx.closePath();
   }
   SmokeDrawSecondLevel() {
-    ctx.beginPath();
+    // ctx.beginPath();
     var smoke2 = new Image();
     smoke2.src = `./images/background/smoke2.png`;
     ctx.drawImage(
@@ -144,7 +146,7 @@ class Player {
       this.w / 2,
       this.h / 2
     );
-    ctx.closePath();
+    // ctx.closePath();
   }
   ShakeFirstLevel() {
     if (shake === false) {
@@ -232,8 +234,9 @@ class Player {
   }
   Right() {
     gameSpeed = gameSpeed + 0.01;
-    // gameSpeed = parseFloat(gameSpeed.toFixed(3));
+    gameSpeed = parseFloat(gameSpeed.toFixed(3));
     speed = Math.floor(gameSpeed / 0.3);
+    indicators();
     speedValue.innerText = `${speed}`;
     // indicators(speed);
     // lamps(speed);
@@ -241,7 +244,7 @@ class Player {
   }
   Left() {
     gameSpeed = gameSpeed - 0.01;
-    // gameSpeed = parseFloat(gameSpeed.toFixed(3));
+    gameSpeed = parseFloat(gameSpeed.toFixed(3));
     let lowSpeed = setInterval(() => {
       if (speed > 15 || speed === 0) clearInterval(lowSpeed);
       else {
@@ -254,6 +257,7 @@ class Player {
       }
     }, 50);
     speed = Math.floor(gameSpeed / 0.3);
+    indicators();
     speedValue.innerText = `${speed}`;
     // indicators(speed);
     // lamps(speed);
@@ -261,46 +265,47 @@ class Player {
   }
 }
 class Obstacle {
-  constructor(x, y, w, h, t, t2) {
+  constructor(o, x, y, w, h, t, t2) {
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
     this.type = t;
     this.type2 = t2;
+    this.object = o;
   }
   Update() {
     this.dx = -gameSpeed;
     this.x += this.dx;
-    // this.x = parseFloat(this.x.toFixed(3));
+    this.x = parseFloat(this.x.toFixed(3));
     this.Draw();
   }
   Draw() {
-    ctx.beginPath();
-    if (this.type === 0) {
-      var treeImg = new Image();
-      treeImg.src = `./images/background/tree${this.type2}.png`;
-      ctx.drawImage(treeImg, this.x, this.y, this.w, this.h);
-    } else if (this.type === 1) {
-      var mountainImg = new Image();
-      mountainImg.src = `./images/background/mountain${this.type2}.png`;
-      ctx.drawImage(mountainImg, this.x, this.y, this.w, this.h);
-    } else {
-      var birdImg = new Image();
-      birdImg.src = `./images/background/bird.png`;
-      ctx.drawImage(birdImg, this.x, this.y, this.w, this.h);
-    }
-    ctx.closePath();
+    // ctx.beginPath();
+    if (this.type === 0)
+      ctx.drawImage(this.object, this.x, this.y, this.w, this.h);
+    else if (this.type === 1)
+      ctx.drawImage(this.object, this.x, this.y, this.w, this.h);
+    else ctx.drawImage(this.object, this.x, this.y, this.w, this.h);
+    // ctx.closePath();
   }
 }
-
+var trees = [];
+var i = 0;
+var mountains = [];
+var j = 0;
+var birds = [];
+var k = 0;
 function SpawnObstacle() {
   var type = Math.floor(Math.random() * 3);
   var type2 = Math.floor(Math.random() * 3) + 1;
-  var positionX = Math.random() * canvas.width + canvas.width + 800;
+  var positionX = Math.floor(Math.random() * canvas.width + canvas.width);
   var positionY = Math.floor(Math.random() * 200);
   if (type == 0) {
+    trees[i] = new Image();
+    trees[i].src = `./images/background/tree${type2}.png`;
     let tree = new Obstacle(
+      trees[i],
       positionX,
       canvas.height - agacYukseklik,
       agacUzunluk,
@@ -309,8 +314,12 @@ function SpawnObstacle() {
       type2
     );
     obstacles.push(tree);
+    ++i;
   } else if (type === 1) {
+    mountains[j] = new Image();
+    mountains[j].src = `./images/background/mountain${type2}.png`;
     let mountain = new Obstacle(
+      mountains[j],
       positionX,
       canvas.height - dagYukseklik,
       dagUzunluk,
@@ -319,8 +328,12 @@ function SpawnObstacle() {
       type2
     );
     obstacles.push(mountain);
+    ++j;
   } else {
+    birds[k] = new Image();
+    birds[k].src = `./images/background/bird.png`;
     let bird = new Obstacle(
+      birds[k],
       positionX,
       positionY,
       kusUzunluk,
@@ -329,6 +342,7 @@ function SpawnObstacle() {
       1
     );
     obstacles.push(bird);
+    ++k;
   }
 }
 
@@ -351,16 +365,16 @@ function Start() {
   highScoreValue.innerText = `${highScore}`;
   requestAnimationFrame(Update);
 }
-let spawnTimer = 160;
 
+let spawnTimer = 140;
 function Update() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (gameStart === true) {
     --spawnTimer;
     if (spawnTimer <= 0) {
       SpawnObstacle();
       spawnTimer = 140;
     }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < obstacles.length; ++i) {
       let o = obstacles[i];
       if (obstacles[i] !== 1) {
@@ -381,6 +395,7 @@ function Update() {
         player.y = canvas.height - ucakYukseklik;
       }
     }
+    scoreCalc();
   }
   player.Animate();
   if (speed > 70 && speed < 90) {
@@ -392,11 +407,11 @@ function Update() {
     player.SmokeDrawSecondLevel();
     player.ShakeSecondLevel();
   }
-  requestAnimationFrame(Update);
-  indicators();
   lamps();
   mode();
+  requestAnimationFrame(Update);
 }
+
 /* Uçağın Ana Fonksiyonları Bitti*/
 // setInterval(mode, 2000);
 // setInterval(lamps, 2000);
@@ -404,11 +419,11 @@ function Update() {
 
 /* Puan - Mod */
 
-let scoreInterval = setInterval(() => {
-  score = score + speed * 0.1;
-  score = Math.floor(score);
-  scoreValue.innerText = `${score}`;
-}, 500);
+function scoreCalc() {
+  if (speed < 10) score = score + 0.03;
+  else score = score + speed * 0.003;
+  scoreValue.innerText = `${Math.floor(score)}`;
+}
 
 function mode() {
   if (speed < 19) modeValue.innerText = `IDLE`;
@@ -420,6 +435,24 @@ function mode() {
 
 /* Göstergeler ve Lambalar */
 var black = false;
+
+function lamps() {
+  if (speed < 20) {
+    lights[5].style.backgroundColor = "black";
+    lights[9].style.backgroundColor = "white";
+  } else {
+    lights[5].style.backgroundColor = "white";
+    lights[9].style.backgroundColor = "black";
+  }
+  if (speed > 20 && speed < 70) {
+    lights[7].style.backgroundColor = "white";
+    lights[6].style.backgroundColor = "black";
+  } else lights[6].style.backgroundColor = "white";
+
+  if (speed < 40) lights[8].style.backgroundColor = "black";
+  else lights[8].style.backgroundColor = "white";
+}
+setInterval(lampOnOff, 500);
 
 function lampOnOff() {
   if (speed < 70) {
@@ -433,23 +466,6 @@ function lampOnOff() {
       black = true;
     }
   }
-}
-
-setInterval(lampOnOff, 700);
-
-function lamps() {
-  if (speed < 20) {
-    lights[5].style.backgroundColor = "black";
-    lights[9].style.backgroundColor = "white";
-  } else {
-    lights[5].style.backgroundColor = "white";
-    lights[9].style.backgroundColor = "black";
-  }
-  if (speed > 20 && speed < 70) lights[6].style.backgroundColor = "black";
-  else lights[6].style.backgroundColor = "white";
-
-  if (speed < 40) lights[8].style.backgroundColor = "black";
-  else lights[8].style.backgroundColor = "white";
 }
 function indicators() {
   if (keys["KeyD"] === true && newSpeed == speed) {
@@ -509,26 +525,28 @@ function indicators() {
       rotate_oil = rotate_oil + 4.5;
       rotate_ftit = rotate_ftit - 0.75;
       ++newSpeed;
-      if (rotate_rpm > 300) rotate_rpm = 300;
-      if (rotate_oil > 300) rotate_oil = 300;
+      // if (rotate_rpm > 300) rotate_rpm = 300;
+      // if (rotate_oil > 300) rotate_oil = 300;
       if (speed == 127) {
         newSpeed = 127;
       }
     }
-
-    imlec_rpm[1].style.transform = `rotate(${rotate_rpm}deg)`;
-    imlec_oil[1].style.transform = `rotate(${rotate_oil}deg)`;
-    imlec_ftit[1].style.transform = `rotate(${rotate_ftit}deg)`;
+    // imlec_rpm[1].style.transform = `rotate(${rotate_rpm}deg)`;
+    // imlec_oil[1].style.transform = `rotate(${rotate_oil}deg)`;
+    // imlec_ftit[1].style.transform = `rotate(${rotate_ftit}deg)`;
+    imlec_rpm.style.transform = `rotate(${rotate_rpm}deg)`;
+    imlec_oil.style.transform = `rotate(${rotate_oil}deg)`;
+    imlec_ftit.style.transform = `rotate(${rotate_ftit}deg)`;
   }
   if (keys["KeyA"] === true && newSpeed - 1 == speed) {
     if (speed > 20 && speed < 31) {
       rotate_rpm = rotate_rpm - 11.37;
       rotate_oil = rotate_oil - 0.946;
       rotate_ftit = rotate_ftit - 2.16;
-      --newSpeed;
       if (rotate_rpm < 0) rotate_rpm = 0;
       if (rotate_oil < 0) rotate_oil = 0;
       if (rotate_ftit < 0) rotate_ftit = 0;
+      --newSpeed;
     } else if (speed < 41) {
       rotate_rpm = rotate_rpm - 5.68;
       rotate_oil = rotate_oil - 0.958;
@@ -580,11 +598,20 @@ function indicators() {
       rotate_ftit = rotate_ftit + 0.75;
       --newSpeed;
     }
-    imlec_rpm[1].style.transform = `rotate(${rotate_rpm}deg)`;
-    imlec_oil[1].style.transform = `rotate(${rotate_oil}deg)`;
-    imlec_ftit[1].style.transform = `rotate(${rotate_ftit}deg)`;
+    // imlec_rpm[1].style.transform = `rotate(${rotate_rpm}deg)`;
+    // imlec_oil[1].style.transform = `rotate(${rotate_oil}deg)`;
+    // imlec_ftit[1].style.transform = `rotate(${rotate_ftit}deg)`;
+    if (speed < 21) {
+      rotate_rpm = 0;
+      rotate_oil = 0;
+      rotate_ftit = 0;
+    }
+    imlec_rpm.style.transform = `rotate(${rotate_rpm}deg)`;
+    imlec_oil.style.transform = `rotate(${rotate_oil}deg)`;
+    imlec_ftit.style.transform = `rotate(${rotate_ftit}deg)`;
   }
-  imlec_throttle[1].style.transform = `rotate(${speed * 2.36}deg)`;
+  // imlec_throttle[1].style.transform = `rotate(${speed * 2.36}deg)`;
+  imlec_throttle.style.transform = `rotate(${speed * 2.36}deg)`;
 }
 /* Göstergeler ve Lambalar Bitti*/
 
@@ -599,7 +626,6 @@ function circleBig() {
     x = x + 0.01;
   }, 20);
 }
-circleBig();
 let ilkKısım = true;
 let stop1 = false;
 window.addEventListener("keydown", (e) => {
@@ -674,7 +700,7 @@ function gameOver() {
   spawnTimer = 175;
   gameSpeed = 0;
   if (score > highScore) {
-    highScore = score;
+    highScore = Math.floor(score);
     window.localStorage.setItem("highScore", highScore);
     highScoreValue.innerText = `${highScore}`;
   }
@@ -686,10 +712,10 @@ function gameOver() {
   keys["KeyS"] = false;
   keys["KeyA"] = false;
   keys["KeyD"] = false;
-  imlec_oil[1].style.transform = `rotate(0deg)`;
-  imlec_rpm[1].style.transform = `rotate(0deg)`;
-  imlec_ftit[1].style.transform = `rotate(0deg)`;
-  imlec_throttle[1].style.transform = `rotate(0deg)`;
+  imlec_oil.style.transform = `rotate(0deg)`;
+  imlec_rpm.style.transform = `rotate(0deg)`;
+  imlec_ftit.style.transform = `rotate(0deg)`;
+  imlec_throttle.style.transform = `rotate(0deg)`;
   rotate_oil = 0;
   rotate_rpm = 0;
   rotate_ftit = 0;

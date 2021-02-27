@@ -7,14 +7,13 @@
     <title>Aircraft Simulator</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <link rel="icon" href="./icon/planeIcon.svg">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
     <div id="game">
-        <img id="plane" src="./images/aircraft.png" alt="airplane">
+        <img id="plane" src="./images/aircraft.png" alt="plane">
         <section class="firstPage">
             <h3>2D Aircraft Simulator</h3>
             <h4>Kurallar</h4>
@@ -49,7 +48,7 @@
         <section class="information">
             <div id="start">
                 <img class="ok" src="./images/sag-ok.png" alt="oyuna_gec">
-                <h4 style="opacity: 1;font-size: 4rem;">Bilgilendirme</h4>
+                <h4 class="info-title">Bilgilendirme</h4>
             </div>
             <div class="elements">
                 <div class="element">
@@ -98,7 +97,7 @@
                                             d="M5 225.66C5.141 179.942 19.247 135.419 45.554 98.02C71.194 61.572 108.214 33.567 149.994 18.232C193.463 2.27599 241.658 0.81699 286.174 13.291C329.077 25.312 367.465 50.861 395.934 85.013C455.451 156.399 462.346 260.823 414.546 340.123C391.654 378.102 357.111 408.358 316.866 426.802C274.681 446.135 226.422 451.078 181.046 441.877C91.625 423.747 21.806 349.387 7.576 259.607C5.8 248.387 5.041 237.007 5.006 225.657C4.996 222.433 -0.00400357 222.432 0.00599643 225.657C0.143996 270.414 13.366 314.282 38.261 351.497C62.391 387.571 97.09 416.136 136.928 433.253C178.401 451.072 224.806 455.641 269.078 447.226C312.133 439.043 352.147 417.619 383.518 387.145C448.485 324.044 468.786 224.995 435.108 141.125C401.848 58.274 320.368 2.46499 231.368 -0.00501052C141.748 -2.49601 57.538 50.676 20.278 131.995C6.833 161.325 0.107996 193.425 0.00799643 225.655C-0.00200357 228.875 4.998 228.875 5.008 225.655L5 225.66Z"
                                             fill="black" />
                                     </g>
-                                    <g id="imlec_oil" class="imlec">
+                                    <g class="imlec">
                                         <path id="yuvarlak"
                                             d="M226.88 212.9H226.179C219.365 212.9 213.679 218.586 213.679 225.4C213.679 232.214 219.365 237.9 226.179 237.9H226.88C233.694 237.9 239.38 232.214 239.38 225.4C239.38 218.586 233.69 212.9 226.88 212.9Z"
                                             fill="black" />
@@ -173,7 +172,7 @@
                                             d="M5 225.66C5.141 179.942 19.247 135.419 45.554 98.02C71.194 61.572 108.214 33.567 149.994 18.232C193.463 2.27599 241.658 0.81699 286.174 13.291C329.077 25.312 367.465 50.861 395.934 85.013C455.451 156.399 462.346 260.823 414.546 340.123C391.654 378.102 357.111 408.358 316.866 426.802C274.681 446.135 226.422 451.078 181.046 441.877C91.625 423.747 21.806 349.387 7.576 259.607C5.8 248.387 5.041 237.007 5.006 225.657C4.996 222.433 -0.00400357 222.432 0.00599643 225.657C0.143996 270.414 13.366 314.282 38.261 351.497C62.391 387.571 97.09 416.136 136.928 433.253C178.401 451.072 224.806 455.641 269.078 447.226C312.133 439.043 352.147 417.619 383.518 387.145C448.485 324.044 468.786 224.995 435.108 141.125C401.848 58.274 320.368 2.46499 231.368 -0.00501052C141.748 -2.49601 57.538 50.676 20.278 131.995C6.833 161.325 0.107996 193.425 0.00799643 225.655C-0.00200357 228.875 4.998 228.875 5.008 225.655L5 225.66Z"
                                             fill="black" />
                                     </g>
-                                    <g id="imlec_rpm" class="imlec">
+                                    <g class="imlec">
                                         <path id="yuvarlak"
                                             d="M226.88 212.9H226.179C219.365 212.9 213.679 218.586 213.679 225.4C213.679 232.214 219.365 237.9 226.179 237.9H226.88C233.694 237.9 239.38 232.214 239.38 225.4C239.38 218.586 233.69 212.9 226.88 212.9Z"
                                             fill="black" />
@@ -249,7 +248,7 @@
                                                 d="M5 225.66C5.141 179.942 19.247 135.419 45.554 98.02C71.194 61.572 108.214 33.567 149.994 18.232C193.463 2.27599 241.658 0.81699 286.174 13.291C329.077 25.312 367.465 50.861 395.934 85.013C455.451 156.399 462.346 260.823 414.546 340.123C391.654 378.102 357.111 408.358 316.866 426.802C274.681 446.135 226.422 451.078 181.046 441.877C91.625 423.747 21.806 349.387 7.576 259.607C5.8 248.387 5.041 237.007 5.006 225.657C4.996 222.433 -0.00400357 222.432 0.00599643 225.657C0.143996 270.414 13.366 314.282 38.261 351.497C62.391 387.571 97.09 416.136 136.928 433.253C178.401 451.072 224.806 455.641 269.078 447.226C312.133 439.043 352.147 417.619 383.518 387.145C448.485 324.044 468.786 224.995 435.108 141.125C401.848 58.274 320.368 2.46499 231.368 -0.00501052C141.748 -2.49601 57.538 50.676 20.278 131.995C6.833 161.325 0.107996 193.425 0.00799643 225.655C-0.00200357 228.875 4.998 228.875 5.008 225.655L5 225.66Z"
                                                 fill="black" />
                                         </g>
-                                        <g id="imlec_ftit" class="imlec">
+                                        <g class="imlec">
                                             <path id="yuvarlak"
                                                 d="M226.88 212.9H226.179C219.365 212.9 213.679 218.586 213.679 225.4C213.679 232.214 219.365 237.9 226.179 237.9H226.88C233.694 237.9 239.38 232.214 239.38 225.4C239.38 218.586 233.69 212.9 226.88 212.9Z"
                                                 fill="black" />
@@ -324,7 +323,7 @@
                                             d="M5 225.66C5.141 179.942 19.247 135.419 45.554 98.02C71.194 61.572 108.214 33.567 149.994 18.232C193.463 2.27599 241.658 0.81699 286.174 13.291C329.077 25.312 367.465 50.861 395.934 85.013C455.451 156.399 462.346 260.823 414.546 340.123C391.654 378.102 357.111 408.358 316.866 426.802C274.681 446.135 226.422 451.078 181.046 441.877C91.625 423.747 21.806 349.387 7.576 259.607C5.8 248.387 5.041 237.007 5.006 225.657C4.996 222.433 -0.00400357 222.432 0.00599643 225.657C0.143996 270.414 13.366 314.282 38.261 351.497C62.391 387.571 97.09 416.136 136.928 433.253C178.401 451.072 224.806 455.641 269.078 447.226C312.133 439.043 352.147 417.619 383.518 387.145C448.485 324.044 468.786 224.995 435.108 141.125C401.848 58.274 320.368 2.46499 231.368 -0.00501052C141.748 -2.49601 57.538 50.676 20.278 131.995C6.833 161.325 0.107996 193.425 0.00799643 225.655C-0.00200357 228.875 4.998 228.875 5.008 225.655L5 225.66Z"
                                             fill="black" />
                                     </g>
-                                    <g id="imlec_throttle" class="imlec">
+                                    <g class="imlec">
                                         <path id="yuvarlak"
                                             d="M226.88 212.9H226.179C219.365 212.9 213.679 218.586 213.679 225.4C213.679 232.214 219.365 237.9 226.179 237.9H226.88C233.694 237.9 239.38 232.214 239.38 225.4C239.38 218.586 233.69 212.9 226.88 212.9Z"
                                             fill="black" />
@@ -355,37 +354,37 @@
                 </div>
                 <div class="element">
                     <h4>Tuşlar</h4>
-                    <img style="height: 200px;width: 250px;" src="./images/keyboard.png" alt="">
+                    <img class="keyboard" src="./images/keyboard.png" alt="">
                     <p>D: Hızlanma, A: Yavaşlama<br> W: Yukarı Hareket, S: Aşağı Hareket </p>
                 </div>
                 <div class="element">
                     <h4>Lambalar</h4>
                     <div class="circles">
                         <div class="circle"></div>
-                        <span style="font-size: 2rem;">Standby Gen Lt: Lorem ipsum dolor
+                        <span>Standby Gen Lt: Lorem ipsum dolor
                             sit amet consectetur
                             adipisicing.</span>
                     </div>
                     <div class="circles">
                         <div class="circle"></div>
-                        <span style="font-size: 2rem;">Main Gen Lt: Lorem ipsum dolor sit,
+                        <span>Main Gen Lt: Lorem ipsum dolor sit,
                             amet consectetur adipisicing.</span>
                         <p></p>
                     </div>
                     <div class="circles">
                         <div class="circle"></div>
-                        <span style="font-size: 2rem;"> Engine Warning Light: Motorda fazla ısınma veya alev alması gibi
+                        <span> Engine Warning Light: Motorda fazla ısınma veya alev alması gibi
                             durumlarda yanar.
                         </span>
                     </div>
                     <div class="circles">
                         <div class="circle"></div>
-                        <span style="font-size: 2rem;"> JFS Run Lt: Lorem ipsum dolor sit amet, consectetur adipisicing.
+                        <span> JFS Run Lt: Lorem ipsum dolor sit amet, consectetur adipisicing.
                         </span>
                     </div>
                     <div class="circles">
                         <div class="circle"></div>
-                        <span style="font-size: 2rem;"> SEC Caution Light: Yakıt pompa basıncının düşük olduğu
+                        <span> SEC Caution Light: Yakıt pompa basıncının düşük olduğu
                             durumlarda
                             yanar.
                         </span>
@@ -404,8 +403,7 @@
                     <h3>HighScore: <i id="highScore">-</i></h3>
                 </div>
                 <div>
-                    <div class="indicators" style="flex: 2;">
-
+                    <div class="indicators">
                         <svg width="200" height="200" viewBox="0 0 452 452" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g id="oil_pressure 1" clip-path="url(#clip0)">
@@ -692,7 +690,6 @@
                                 </clipPath>
                             </defs>
                         </svg>
-
                     </div>
                     <div class="lights">
                         <div class="circles">
