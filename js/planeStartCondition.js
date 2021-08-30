@@ -46,7 +46,6 @@ const oynakf = () => {
 window.addEventListener("keydown", (event) => {
   if (event.keyCode === 32) {
     if (circleBiggerCondition) {
-      console.log("burda");
       if (x > 1.33 && x < 1.66) {
         basarili.innerText = "Start Başarılı";
         basarili.style.opacity = "1";
