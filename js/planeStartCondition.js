@@ -44,29 +44,33 @@ const oynakf = () => {
 };
 
 window.addEventListener("keydown", (event) => {
-  if (event.keyCode === 32 && circleBiggerCondition) {
-    if (x > 1.33 && x < 1.66) {
-      basarili.innerText = "Start Başarılı";
-      basarili.style.opacity = "1";
-      yazı.innerText =
-        "Siyah işaret iki siyah çubuğun arasına geldiği zaman space (boşluk) tuşuna basın...";
-      circleBiggerCondition = false;
-      stop1 = false;
-      oynakf();
+  if (event.keyCode === 32) {
+    if (circleBiggerCondition) {
+      console.log("burda");
+      if (x > 1.33 && x < 1.66) {
+        basarili.innerText = "Start Başarılı";
+        basarili.style.opacity = "1";
+        yazı.innerText =
+          "Siyah işaret iki siyah çubuğun arasına geldiği zaman space (boşluk) tuşuna basın...";
+        circleBiggerCondition = false;
+        stop1 = false;
+        oynakf();
+      } else {
+        basarili.innerText = "No-Start";
+        basarili.style.opacity = "1";
+        x = 1;
+      }
     } else {
-      basarili.innerText = "No-Start";
-      basarili.style.opacity = "1";
-      x = 1;
+      if (left > 13 && left < 14) {
+        stop1 = true;
+        yazı.innerText = "Motor Çalıştı. (D tuşu ile hızlanabilirsiniz.)";
+        startCondition = true;
+        circleBiggerCondition = false;
+      } else if (left < 13)
+        backToFirstCondition("Düşük güç verildi-Hugh Start Durumu Oluştu...");
+      else
+        backToFirstCondition("Yüksek Güç Verildi-Hot Start Durumu Oluştu...");
     }
-  } else {
-    if (left > 13 && left < 14) {
-      stop1 = true;
-      yazı.innerText = "Motor Çalıştı. (D tuşu ile hızlanabilirsiniz.)";
-      startCondition = true;
-      circleBiggerCondition = false;
-    } else if (left < 13)
-      backToFirstCondition("Düşük güç verildi-Hugh Start Durumu Oluştu...");
-    else backToFirstCondition("Yüksek Güç Verildi-Hot Start Durumu Oluştu...");
   }
 });
 
