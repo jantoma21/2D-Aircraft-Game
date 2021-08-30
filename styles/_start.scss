@@ -1,69 +1,68 @@
 .start {
-    flex: 1;
-    @include flex(center, center, column);
-    margin-top: -10vh;
+  flex: 1;
+  @include flex(center, center, column);
+  margin-top: -10vh;
 }
 
 .startDis {
-    height: 7vw;
-    width: 7vw;
-    border: solid black 1px;
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2vh;
+  height: 7vw;
+  width: 7vw;
+  border: solid black 1px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
 }
 
 .startIc {
-    height: 5.6vw;
-    width: 5.6vw;
-    border: solid black 1px;
-    border-radius: 50%;
-    position: absolute;
-    @include flex(center, center, column);
+  height: 5.6vw;
+  width: 5.6vw;
+  border: solid black 1px;
+  border-radius: 50%;
+  position: absolute;
+  @include flex(center, center, column);
 }
 
 .startEnIc {
-    height: 4.2vw;
-    width: 4.2vw;
-    position: absolute;
-    border-radius: 50%;
-    background-color: black;
-    @include flex(center, center, column);
+  height: 4.2vw;
+  width: 4.2vw;
+  position: absolute;
+  border-radius: 50%;
+  background-color: black;
+  @include flex(center, center, column);
 
-    h6 {
-        margin: 0;
-    }
+  h6 {
+    margin: 0;
+  }
 }
 
 .cubuk {
-    height: 5vh;
-    width: 20vw;
-    border: solid black 1px;
-    position: relative;
-    margin-bottom: 1vh;
-
+  height: 5vh;
+  width: 20vw;
+  border: solid black 1px;
+  position: relative;
+  margin-bottom: 1vh;
 }
 
 .hedef {
-    position: absolute;
-    height: 5vh;
-    width: 2vw;
-    right: 5vw;
-    border-left: solid black 1px;
-    border-right: solid black 1px;
+  position: absolute;
+  height: 5vh;
+  width: 2vw;
+  right: 5vw;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
 }
 
 .oynak {
-    position: absolute;
-    width: 1vw;
-    height: 5vh;
-    left: 0;
-    border-left: solid black 1px;
-    border-right: solid black 1px;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background-color: black;
+  position: absolute;
+  width: 1vw;
+  height: 5vh;
+  left: 0;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: black;
 }

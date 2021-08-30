@@ -26,8 +26,10 @@ canvas {
   margin-top: 20px;
   flex: 2;
 
-  svg {
+  object {
     margin: 0 10px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -45,13 +47,13 @@ canvas {
     margin: 10px;
 
     .circle {
-      transition: all .1s linear;
+      transition: all 0.1s linear;
     }
   }
 }
 
 .imlec {
-  transition: transform .75s linear;
+  transition: transform 0.75s linear;
   transform-origin: center;
 }
 

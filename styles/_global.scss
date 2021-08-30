@@ -1,77 +1,76 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
-    overflow: hidden;
+  font-size: 62.5%;
+  overflow: hidden;
 }
 
 body {
-    overflow: hidden;
+  overflow: hidden;
 
-    p {
-        font-size: $header3;
-        margin-top: 10px;
-    }
+  p {
+    font-size: $header3;
+    margin-top: 10px;
+  }
 
-    h3 {
-        font-size: $header1;
-        font-family: 'Montserrat', sans-serif;
-        margin-bottom: 5vh;
-    }
+  h3 {
+    font-size: $header1;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 5vh;
+  }
 
-    h4 {
-        opacity: 0.5;
-        font-size: $header2;
-        font-family: 'Roboto', sans-serif;
-        margin-bottom: 3vh;
+  h4 {
+    opacity: 0.5;
+    font-size: $header2;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 3vh;
+  }
 
-    }
+  li {
+    font-size: $header3;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    margin: 2vh;
+  }
 
-    li {
-        font-size: $header3;
-        font-family: 'Roboto', sans-serif;
-        font-weight: lighter;
-        margin: 2vh
-    }
+  ul {
+    margin-bottom: 4vh;
+  }
 
-    ul {
-        margin-bottom: 4vh;
-    }
-
-    h6 {
-        position: absolute;
-        color: white;
-        transition: all 0.5s ease-in-out;
-        opacity: 0;
-    }
+  h6 {
+    position: absolute;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+  }
 }
 
 .opacity {
-    opacity: 0;
+  opacity: 0;
 }
 
 .opacity_off {
-    opacity: 1;
+  opacity: 1;
 }
 
 button {
-    padding: 2vh 4vw;
-    text-decoration: none;
-    color: black;
-    border: solid 1px black;
-    background-color: none;
-    font-size: $header3;
-    font-family: 'Roboto', sans-serif;
-    background-color: white;
-    cursor: pointer;
+  padding: 2vh 4vw;
+  text-decoration: none;
+  color: black;
+  border: solid 1px black;
+  background-color: none;
+  font-size: $header3;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  cursor: pointer;
 }
 
 button:hover {
-    transition: all 1s ease;
-    color: white;
-    background-color: black;
+  transition: all 1s ease;
+  color: white;
+  background-color: black;
 }
